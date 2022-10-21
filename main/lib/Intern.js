@@ -1,5 +1,15 @@
-class intern {
-    
+const Employees = require('./Employess')
+class Intern extends Employees {
+    constructor({name , id , email , school}) {
+        super(name , id , email)
+        this.school = school
+    }
+    getSchool() {
+        return this.school
+    }
+    getRole() {
+        return 'Intern'
+    }
 }
 
 
@@ -8,4 +18,4 @@ class intern {
 
 
 
-module.exports = intern;
+module.exports = Intern;
