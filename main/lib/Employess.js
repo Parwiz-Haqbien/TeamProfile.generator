@@ -5,13 +5,16 @@ class Employees {
         this.email = email
     }
     getName() {
-        return $(this.name)
+        return this.name
     }
     getId() {
-        return $(this.id)
+        return this.id
     }
     getEmail() {
-        return $(this.email)
+        return this.email
+    }
+    getRole() {
+        return "Employee"
     }
 }
 module.exports = Employees
