@@ -1,11 +1,15 @@
 const Engineer = require('../lib/Engineer');
-const Employee = require('./Employee.test')
 
-describe('Engineer'  ,() => {
-    test('it should return a github username' , () => {
-        const information = new Engineer('Parwiz$1')
-        expect(information.getGithub()).toBe('Parwiz$1')
+describe('Engineer' , () => {
 
-    expect(information).toBeInstanceOf(Employee)
+    test("it should return a github username", () => {
+        const gitUsername = "Parwiz$1"
+        const chosenGit = new Engineer("Frank", 2, "frank@gmail.com", gitUsername);
+        expect(chosenGit.getGithub()).toBe(gitUsername)
+    })
+    test("it should return a role", () => {
+        const role = "Engineer"
+        const roleGiven = new Engineer("Frank", 2, "frank@gmail.com", role);
+        expect(roleGiven.getRole()).toBe(role)
     })
 })
