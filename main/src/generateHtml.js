@@ -117,3 +117,5 @@ function generateHtml(managerData, allEngineers, allInterns) {
     </html>
   `;
 }
+
+module.exports = generateHtml;
