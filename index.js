@@ -141,7 +141,7 @@ function addEngineer(managerData, engineerData, internData) {
          else {
             renderAnswers(managerData, allEngineers , allIntern);
          }
-})
+});
 }
 
 function addIntern(managerData, engineerData, internData) {
@@ -160,8 +160,18 @@ function addIntern(managerData, engineerData, internData) {
          else {
             renderAnswers(managerData, allEngineers , allIntern);
          }
-})
+});
 }
+
+// Create a function to start the app
+function renderAnswers(managerData, allEngineers, allInterns) {
+
+    const htmlManagerContent = generateHtml(managerData, allEngineers, allInterns);
+  
+    fs.writeFile('./dist/output.html', htmlManagerContent, (err) =>
+      err ? console.log(err) : console.log('Html successfully created!')
+    );
+  }
 
 
 
