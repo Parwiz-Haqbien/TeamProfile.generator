@@ -7,7 +7,7 @@ function renderManager(managerData) {
     const manager = new Manager(managerData.managerName, managerData.managerId, managerData.managerEmail, managerData.officeNumber);
 
     return ` <div class="card-header">
-    <h2 class="card-title">${managerName}</h2>
+    <h2 class="card-title">${manager.name}</h2>
     <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.getRole()}</h3>
 </div>
 <div class="card-body">

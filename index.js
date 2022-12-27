@@ -130,7 +130,8 @@ function addEngineer(managerData, engineerData, internData) {
       .prompt(engineerQuestions)
       //gather the user input data and allow the user to choose from a list of options
       .then((engineerData) => {
-        const engineers = new interns(engineerData.engineerName, engineerData.engineerId, engineerData.engineerEmail, engineerData.github);
+
+        const engineers = new Engineer(engineerData.engineerName, engineerData.engineerId, engineerData.engineerEmail, engineerData.github);
         allEngineers.push(engineers);
         if(engineerData.menu === "Add Engineer") {
             addEngineer(managerData, engineerData, allIntern);
@@ -149,7 +150,8 @@ function addIntern(managerData, engineerData, internData) {
       .prompt(internQuestions)
       //gather the user input data and allow the user to choose from a list of options
       .then((internData) => {
-        const interns = new interns(internData.internName, internData.internId, internData.internEmail, internData.School);
+
+        const interns = new Intern(internData.internName, internData.internId, internData.internEmail, internData.School);
         allIntern.push(interns);
         if(internData.menu === "Add Engineer") {
             addEngineer(managerData, engineerData, allIntern);
@@ -172,6 +174,9 @@ function renderAnswers(managerData, allEngineers, allInterns) {
       err ? console.log(err) : console.log('Html successfully created!')
     );
   }
+
+  // Function call to start the app
+init();
 
 
 
