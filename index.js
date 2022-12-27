@@ -125,6 +125,25 @@ function init() {
       });
 }
 
+function addEngineer(managerData, engineerData, internData) {
+    inquirer
+      .prompt(engineerQuestions)
+      //gather the user input data and allow the user to choose from a list of options
+      .then((engineerData) => {
+        const engineers = new interns(engineerData.engineerName, engineerData.engineerId, engineerData.engineerEmail, engineerData.github);
+        allEngineers.push(engineers);
+        if(engineerData.menu === "Add Engineer") {
+            addEngineer(managerData, engineerData, allIntern);
+        }
+         else if (internData.menu === "Add Intern") {
+            addIntern(managerData)
+         }
+         else {
+            renderAnswers(managerData, allEngineers , allIntern);
+         }
+})
+}
+
 function addIntern(managerData, engineerData, internData) {
     inquirer
       .prompt(internQuestions)
