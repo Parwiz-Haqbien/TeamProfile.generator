@@ -30,7 +30,7 @@ class team {
             {
                 type: 'input',
                 name: 'email',
-                message: 'what is your team managers email adress?'
+                message: 'what is your team managers email address?'
             },
             {
                 type: 'input',
