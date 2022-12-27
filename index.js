@@ -172,7 +172,7 @@ function renderAnswers(managerData, allEngineers, allInterns) {
 
     const htmlManagerContent = generateHtml(managerData, allEngineers, allInterns);
   
-    fs.writeFile('./main/dist/output.html', htmlManagerContent, (err) =>
+    fs.writeFile('./main/dist/main.html', htmlManagerContent, (err) =>
       err ? console.log(err) : console.log('Html successfully created!')
     );
   }
