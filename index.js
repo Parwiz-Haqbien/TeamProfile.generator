@@ -133,11 +133,12 @@ function addEngineer(managerData, engineerData, internData) {
 
         const engineers = new Engineer(engineerData.engineerName, engineerData.engineerId, engineerData.engineerEmail, engineerData.github);
         allEngineers.push(engineers);
+
         if(engineerData.menu === "Add Engineer") {
-            addEngineer(managerData, engineerData, allIntern);
+            addEngineer(managerData, allEngineers, allIntern);
         }
-         else if (internData.menu === "Add Intern") {
-            addIntern(managerData)
+         else if (engineerData.menu === "Add Intern") {
+            addIntern(managerData, allEngineers, allIntern)
          }
          else {
             renderAnswers(managerData, allEngineers , allIntern);
@@ -153,8 +154,9 @@ function addIntern(managerData, engineerData, internData) {
 
         const interns = new Intern(internData.internName, internData.internId, internData.internEmail, internData.School);
         allIntern.push(interns);
+
         if(internData.menu === "Add Engineer") {
-            addEngineer(managerData, engineerData, allIntern);
+            addEngineer(managerData, allEngineers, allIntern);
         }
          else if (internData.menu === "Add Intern") {
             addIntern(managerData)
@@ -170,7 +172,7 @@ function renderAnswers(managerData, allEngineers, allInterns) {
 
     const htmlManagerContent = generateHtml(managerData, allEngineers, allInterns);
   
-    fs.writeFile('./dist/output.html', htmlManagerContent, (err) =>
+    fs.writeFile('./main/dist/output.html', htmlManagerContent, (err) =>
       err ? console.log(err) : console.log('Html successfully created!')
     );
   }
