@@ -73,5 +73,58 @@ const engineerQuestions = [
       },
 ];
 
+const internQuestions = [
+    {
+        type: 'input',
+        name: 'internName',
+        message: 'what is your interns name?'
+    }, 
+
+    {
+        type: 'number',
+        name: 'internId',
+        message: 'what is your interns id?'
+    }, 
+
+    {
+        type: 'input',
+        name: 'internEmail',
+        message: 'what is your interns email?'
+    }, 
+
+    {
+        type: 'input',
+        name: 'school',
+        message: 'what is your interns school?'
+    }, 
+    {
+        type: 'list',
+        message: ' Would you like to add another team member?',
+        name: 'menu',
+        choices: ["Add Engineer", "Add Intern", "Finish"],
+      },
+];
+
+//creating function for the app to start
+
+function init() {
+    //using inquirer to start the question
+    inquirer
+      .prompt(managerQuestions)
+      //gather the user input data and allow the user to choose from a list of options
+      .then((managerData) => {
+        if(managerData.menu === "Add Engineer") {
+            addEngineer(managerData);
+        }
+         else if (managerData.menu === "Add Intern") {
+            addIntern(managerData)
+         }
+         else {
+            renderAnswers(managerData, allEngineers , allIntern);
+         }
+      });
+}
+
+
 
 
