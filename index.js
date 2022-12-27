@@ -16,22 +16,22 @@ const allEngineers = [];
 const managerQuestions = [
     {
         type: 'input',
-        name: 'name',
+        name: 'managerName',
         message: 'what is your team managers name?'
     },
     {
-        type: 'input',
-        name: 'id',
+        type: 'number',
+        name: 'managerId',
         message: 'what is your employee id?'
     },
     {
         type: 'input',
-        name: 'email',
+        name: 'mangerEmail',
         message: 'what is your team managers email address?'
     },
     {
-        type: 'input',
-        name: 'number',
+        type: 'number',
+        name: 'officeNumber',
         message: 'what is your team managers office number?'
     },
     {
@@ -40,7 +40,38 @@ const managerQuestions = [
         name: 'menu',
         choices: ["Add Engineer", "Add Intern", "Finish"],
       },
-]
+];
+
+const engineerQuestions = [
+    {
+        type: 'input',
+        name: 'engineerName',
+        message: 'what is your Engineers name?'
+    }, 
+
+    {
+        type: 'number',
+        name: 'engineerId',
+        message: 'what is your engineers id?'
+    }, 
+
+    {
+        type: 'input',
+        name: 'engineerEmail',
+        message: 'what is your engineers email?'
+    }, 
+    {
+        type: 'input',
+        name: 'github',
+        message: 'what is your engineers github username?'
+    }, 
+    {
+        type: 'list',
+        message: ' Would you like to add another team member?',
+        name: 'menu',
+        choices: ["Add Engineer", "Add Intern", "Finish"],
+      },
+];
 
 
 
