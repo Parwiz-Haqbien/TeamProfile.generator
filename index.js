@@ -26,7 +26,7 @@ const managerQuestions = [
     },
     {
         type: 'input',
-        name: 'mangerEmail',
+        name: 'managerEmail',
         message: 'what is your team managers email address?'
     },
     {
@@ -152,7 +152,7 @@ function addIntern(managerData, engineerData, internData) {
       //gather the user input data and allow the user to choose from a list of options
       .then((internData) => {
 
-        const interns = new Intern(internData.internName, internData.internId, internData.internEmail, internData.School);
+        const interns = new Intern(internData.internName, internData.internId, internData.internEmail, internData.school);
         allIntern.push(interns);
 
         if(internData.menu === "Add Engineer") {
@@ -172,7 +172,7 @@ function renderAnswers(managerData, allEngineers, allInterns) {
 
     const htmlManagerContent = generateHtml(managerData, allEngineers, allInterns);
   
-    fs.writeFile('./main/dist/main.html', htmlManagerContent, (err) =>
+    fs.writeFile('./main/main.html', htmlManagerContent, (err) =>
       err ? console.log(err) : console.log('Html successfully created!')
     );
   }

@@ -6,7 +6,11 @@ function renderManager(managerData) {
 
     const manager = new Manager(managerData.managerName, managerData.managerId, managerData.managerEmail, managerData.officeNumber);
 
-    return ` <div class="card-header">
+    return ` <div class="container">
+        <div class="row">
+            <div class="team-area col-12 d-flex justify-content-center">
+                <div class="card employee-card">
+    <div class="card-header">
     <h2 class="card-title">${manager.name}</h2>
     <h3 class="card-title"><i class="fas fa-mug-hot mr-2"></i>${manager.getRole()}</h3>
 </div>
@@ -28,7 +32,8 @@ function renderEngineer(newEngineer) {
         const engineer = new Engineer(newEngineer.name, newEngineer.id, newEngineer.email, newEngineer.github);
 
 
-        return `<div class="card employee-card">
+        return `
+        <div class="card employee-card">
         <div class="card-header">
             <h2 class="card-title">${engineer.name}</h2>
             <h3 class="card-title"><i class="fas fa-glasses mr-2"></i> ${engineer.getRole()}</h3>
@@ -54,7 +59,8 @@ function renderIntern(newIntern) {
 
         const intern = new Intern(newIntern.name, newIntern.id, newIntern.email, newIntern.school);
 
-        return `<div class="card employee-card">
+        return `
+        <div class="card employee-card">
         <div class="card-header">
           <h2 class="card-title">${intern.name}</h2>
          <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i> ${intern.getRole()}</h3>
