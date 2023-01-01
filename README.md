@@ -14,7 +14,9 @@ N/A
 
 ## Usage
 To use the Team Profile generator, run node.js and follow the prompts to input the necessary information for the html file.
-
+![App Screenshot](https://github.com/Parwiz-Haqbien/TeamProfile.generator/blob/main/main/dist/htmlPage.png?raw=true
+)
+![App Screenshot](https://github.com/Parwiz-Haqbien/TeamProfile.generator/blob/main/main/dist/terminal.png?raw=true)
 ## Contribution
 Made by Parwiz Haqbien
 
